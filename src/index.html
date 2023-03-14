@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style/style.css" />
+    <script src="/src/script/script.js" defer type="module"></script>
+    <title>Books</title>
+  </head>
+  <body>
+    <header><h1>Låna böcker</h1></header>
+    <div id="app">
+      <ul id="bookList"></ul>
+      <ul id="book-info-container"></ul>
+      <div id="borrowed-books">
+        <h2>utlånade böcker:</h2>
+        <ul id="borrowed-books-list"></ul>
+      </div>
+    </div>
+    <div id="form-container">
+      <h2>Lägg till en ny bok</h2>
+      <input id="title" type="text" placeholder="titel" />
+      <input id="author" type="text" placeholder="författare" />
+      <input id="pages" type="number" placeholder="antal sidor" />
+      <button id="add-book">Lägg till bok</button>
+    </div>
+  </body>
+</html>
