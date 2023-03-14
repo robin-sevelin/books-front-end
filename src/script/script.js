@@ -6,7 +6,7 @@ const pagesInput = document.getElementById('pages');
 const addBookButton = document.getElementById('add-book');
 
 function fetchBooks() {
-  fetch('http://localhost:3012/books')
+  fetch('https://shark-app-dslyn.ondigitalocean.app/books')
     .then((res) => res.json())
     .then((books) => {
       renderBooks(books);
@@ -17,7 +17,6 @@ function fetchBooks() {
 function printBorrowedBooks(books) {
   let unavalibaleBooks = books.filter((book) => book.isAvalibale === false);
   borrowedBooks.innerHTML = '';
-
   for (let i = 0; i < unavalibaleBooks.length; i++) {
     let li = document.createElement('li');
     li.innerHTML = unavalibaleBooks[i].title;
@@ -45,7 +44,7 @@ addBookButton.addEventListener('click', () => {
 });
 
 function postNewBook(newBook) {
-  fetch('http://localhost:3012/books/newbook/', {
+  fetch('https://shark-app-dslyn.ondigitalocean.app/books/newbook/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(newBook),
@@ -70,7 +69,7 @@ function renderBooks(books) {
 }
 
 function fetchBookInfo(bookId) {
-  fetch('http://localhost:3012/books/' + bookId)
+  fetch('https://shark-app-dslyn.ondigitalocean.app/books/' + bookId)
     .then((res) => res.json())
     .then((bookInfo) => {
       printBookInfo(bookInfo);
@@ -97,7 +96,7 @@ function printBookInfo(bookInfo) {
 }
 
 function toggle(bookId) {
-  fetch('http://localhost:3012/books/toggle/' + bookId, {
+  fetch('https://shark-app-dslyn.ondigitalocean.app/books/toggle/' + bookId, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(toggle),
