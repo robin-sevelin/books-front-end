@@ -6,7 +6,7 @@ const pagesInput = document.getElementById('pages');
 const addBookButton = document.getElementById('add-book');
 
 function fetchBooks() {
-  fetch('https://seal-app-6t52v.ondigitalocean.app/books')
+  fetch('http://localhost:3012/books')
     .then((res) => res.json())
     .then((books) => {
       renderBooks(books);
@@ -47,7 +47,7 @@ addBookButton.addEventListener('click', () => {
 });
 
 function postNewBook(newBook) {
-  fetch('https://seal-app-6t52v.ondigitalocean.app/books/newbook/', {
+  fetch('http://localhost:3012/books/newbook/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(newBook),
@@ -72,7 +72,7 @@ function renderBooks(books) {
 }
 
 function fetchBookInfo(bookId) {
-  fetch('https://seal-app-6t52v.ondigitalocean.app/books/' + bookId)
+  fetch('http://localhost:3012/books/' + bookId)
     .then((res) => res.json())
     .then((bookInfo) => {
       printBookInfo(bookInfo);
@@ -105,7 +105,7 @@ function printBookInfo(bookInfo) {
 }
 
 function toggle(bookId) {
-  fetch('https://seal-app-6t52v.ondigitalocean.app/books/toggle/' + bookId, {
+  fetch('http://localhost:3012/books/toggle/' + bookId, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(toggle),
