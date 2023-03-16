@@ -82,15 +82,21 @@ function fetchBookInfo(bookId) {
 function printBookInfo(bookInfo) {
   let bookInfoContainer = document.getElementById('book-info-container');
   let borrowBookButton = document.createElement('button');
+  let closeInfoButton = document.createElement('button');
 
-  bookInfoContainer.innerHTML = `Titel: ${bookInfo.title} <br />Författare: ${bookInfo.author}<br />Antal sidor: ${bookInfo.pages} <br />`;
-  bookInfoContainer.appendChild(borrowBookButton);
+  bookInfoContainer.innerHTML = `<h3>Titel</h3> ${bookInfo.title} <h3>Författare</h3> ${bookInfo.author}<h3>Antal sidor</h3> ${bookInfo.pages} <br />`;
+  bookInfoContainer.append(borrowBookButton, closeInfoButton);
+  closeInfoButton.innerHTML = 'stäng';
 
   if (bookInfo.isAvalibale === true) {
     borrowBookButton.innerHTML = 'Låna bok';
   } else {
     borrowBookButton.innerHTML = 'Lämna tillbaka bok';
   }
+
+  closeInfoButton.addEventListener('click', () => {
+    bookInfoContainer.innerHTML = '';
+  });
 
   borrowBookButton.addEventListener('click', () => {
     bookInfoContainer.innerHTML = '';

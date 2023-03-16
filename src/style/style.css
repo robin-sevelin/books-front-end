@@ -21,6 +21,7 @@ li {
 button {
   cursor: pointer;
   padding: 0.5rem;
+  margin: 1rem;
   border-radius: 0.5rem;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -41,7 +42,6 @@ header {
   justify-content: center;
   align-items: center;
   background-color: #429ea6;
-  color: whitesmoke;
 }
 
 #app {
@@ -62,7 +62,7 @@ header {
 #bookList,
 #book-info-container,
 #borrowed-books-list {
-  padding: 1rem;
+  padding-bottom: 1rem;
 }
 
 footer {
