@@ -39,6 +39,9 @@ addBookButton.addEventListener('click', () => {
       pages: pagesInput.value,
       isAvalibale: true,
     };
+    titleInput.value = '';
+    authorInput.value = '';
+    pagesInput.value = '';
     postNewBook(newBook);
   }
 });
