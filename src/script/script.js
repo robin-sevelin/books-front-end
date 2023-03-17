@@ -29,9 +29,10 @@ addBookButton.addEventListener('click', () => {
   if (
     titleInput.value == '' ||
     authorInput.value == '' ||
-    pagesInput.value == ''
+    pagesInput.value == '' ||
+    pagesInput.value <= 0
   ) {
-    console.log('du måste fylla i fälten');
+    alert('du måste fylla i fälten korrekt');
   } else {
     let newBook = {
       title: titleInput.value,
